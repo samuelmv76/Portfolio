@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-17ac5c96-195b-4965-bc8b-eaacfd519f97/styles.css">
+<script src="_ds/industry-17ac5c96-195b-4965-bc8b-eaacfd519f97/_ds_bundle.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); text-wrap: pretty; }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent-800); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</helmet>
+
+<div style="min-height:100%; background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); font-size:16px; line-height:24px;">
+
+  <header style="position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--color-bg) 92%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--color-divider);">
+    <div style="max-width:1160px; margin:0 auto; padding:12px clamp(20px,5vw,64px); display:flex; align-items:center; gap:24px;">
+      <a href="#top" style="display:flex; align-items:center; gap:10px; color:var(--color-text); text-decoration:none;">
+        <span style="width:30px; height:30px; display:grid; place-items:center; background:var(--color-accent-900); color:var(--color-bg); font-family:var(--font-heading); font-weight:600; font-size:14px; letter-spacing:.06em;">SM</span>
+        <span style="font-family:var(--font-heading); font-weight:600; font-size:19px; text-transform:uppercase; letter-spacing:.04em;">Samuel Martos</span>
+      </a>
+      <nav aria-label="Navegación principal" style="margin-left:auto; display:flex; align-items:center; gap:22px; font-size:13px; letter-spacing:.08em; text-transform:uppercase; font-weight:600;">
+        <a href="#proyectos" style="color:var(--color-accent-700); text-decoration:none;">Proyectos</a>
+        <a href="#trayectoria" style="color:var(--color-accent-700); text-decoration:none;">Trayectoria</a>
+        <a href="#stack" style="color:var(--color-accent-700); text-decoration:none;">Stack</a>
+        <a class="btn btn-primary" href="#contacto" style="letter-spacing:.06em;">Hablemos</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="top" style="max-width:1160px; margin:0 auto; padding:0 clamp(20px,5vw,64px);">
+
+    <section style="padding:96px 0 48px;">
+      <sc-if value="{{ available }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex; align-items:center; gap:10px; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700); margin-bottom:20px;">
+          <span style="width:8px; height:8px; background:var(--color-accent); display:inline-block;"></span>
+          Disponible para nuevas oportunidades · Asturias, España
+        </div>
+      </sc-if>
+      <h1 style="font-family:var(--font-heading); font-weight:600; font-size:clamp(44px,6.6vw,88px); line-height:1.04; letter-spacing:.01em; text-transform:uppercase; margin:0 0 24px; margin-left:-.052em;">
+        <span style="display:block;">Construyo software full stack</span>
+        <span style="display:block; color:var(--color-accent-700);">y soluciones SAP que funcionan.</span>
+      </h1>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); gap:clamp(28px,4vw,52px); align-items:start;">
+        <div>
+          <p style="font-size:17px; line-height:26px; max-width:56ch; margin:0 0 24px;">Desarrollador de software junior con Grado Superior en Desarrollo de Aplicaciones Web y Multiplataforma. Experiencia práctica en el ecosistema SAP —ABAP, RAP, BTP, vistas CDS— y en frontend con React. Inglés B2, cómodo en equipos internacionales.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <a class="btn btn-primary" href="#contacto">Hablemos</a>
+            <a class="btn btn-ghost" href="#proyectos">Ver proyectos</a>
+            <a class="btn btn-ghost" href="https://github.com/samuelmv76" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <sc-if value="{{ showProfileCard }}" hint-placeholder-val="{{ true }}">
+          <div class="blueprint" style="padding:20px 24px 24px;">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <div style="display:flex; justify-content:space-between; gap:12px; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 70%, transparent); border-bottom:1px solid var(--color-divider); padding-bottom:12px; margin-bottom:16px;">
+              <span>perfil.json</span><span>Rev 2026</span>
+            </div>
+            <dl style="margin:0; display:grid; grid-template-columns:max-content minmax(0,1fr); column-gap:20px; row-gap:8px; font-size:15px;">
+              <dt style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700);">Nombre</dt>
+              <dd style="margin:0;">Samuel Martos Vidal</dd>
+              <dt style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700);">Rol</dt>
+              <dd style="margin:0;">Full Stack &amp; SAP</dd>
+              <dt style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700);">Base</dt>
+              <dd style="margin:0;">Corvera de Asturias</dd>
+              <dt style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700);">Stack</dt>
+              <dd style="margin:0;">Java/Spring · React · Laravel · SAP RAP/BTP</dd>
+              <dt style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700);">Busca</dt>
+              <dd style="margin:0;">Equipo de desarrollo</dd>
+            </dl>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <sc-if value="{{ showSpecSheet }}" hint-placeholder-val="{{ true }}">
+      <section style="padding:24px 0 60px;">
+        <div class="blueprint">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <header style="display:flex; flex-wrap:wrap; align-items:stretch; border-bottom:1px solid var(--color-divider); font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;">
+            <span style="flex:1; min-width:16ch; padding:12px 24px; line-height:24px;">Ficha profesional — datos base</span>
+            <span style="padding:12px 24px; line-height:24px; border-left:1px solid var(--color-divider); white-space:nowrap; color:color-mix(in srgb, var(--color-text) 70%, transparent);">SMV-01</span>
+            <span style="padding:12px 24px; line-height:24px; border-left:1px solid var(--color-divider); white-space:nowrap; color:color-mix(in srgb, var(--color-text) 70%, transparent);">Hoja 01 de 01</span>
+          </header>
+          <table class="table" style="table-layout:fixed;">
+            <thead>
+              <tr>
+                <th scope="col" style="width:72px; padding-left:24px;">Nº</th>
+                <th scope="col" style="width:32%;">Concepto</th>
+                <th scope="col" style="width:20%;">Valor</th>
+                <th scope="col">Nota</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding-left:24px; font-size:13px; font-weight:600; letter-spacing:.08em; color:var(--color-accent-700);">01</td>
+                <td>Prácticas profesionales</td>
+                <td style="font-family:var(--font-heading); font-size:24px; letter-spacing:.02em;">2</td>
+                <td style="color:color-mix(in srgb, var(--color-text) 78%, transparent);">Phoenix Contact y Capgemini</td>
+              </tr>
+              <tr>
+                <td style="padding-left:24px; font-size:13px; font-weight:600; letter-spacing:.08em; color:var(--color-accent-700);">02</td>
+                <td>Inglés</td>
+                <td style="font-family:var(--font-heading); font-size:24px; letter-spacing:.02em;">B2</td>
+                <td style="color:color-mix(in srgb, var(--color-text) 78%, transparent);">Comunicación técnica diaria</td>
+              </tr>
+              <tr>
+                <td style="padding-left:24px; font-size:13px; font-weight:600; letter-spacing:.08em; color:var(--color-accent-700);">03</td>
+                <td>Ecosistema SAP</td>
+                <td style="font-family:var(--font-heading); font-size:24px; letter-spacing:.02em;">RAP</td>
+                <td style="color:color-mix(in srgb, var(--color-text) 78%, transparent);">Con BTP, ABAP y vistas CDS</td>
+              </tr>
+              <tr>
+                <td style="padding-left:24px; font-size:13px; font-weight:600; letter-spacing:.08em; color:var(--color-accent-700);">04</td>
+                <td>Titulaciones de Grado Superior</td>
+                <td style="font-family:var(--font-heading); font-size:24px; letter-spacing:.02em;">2</td>
+                <td style="color:color-mix(in srgb, var(--color-text) 78%, transparent);">DAM y DAW, CIFP Avilés</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </sc-if>
+
+    <section id="sobre-mi" style="padding:48px 0 60px;">
+      <span style="display:block; font-size:13px; line-height:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700); margin:0 0 12px;">02 · Sobre mí</span>
+      <hr style="height:1px; border:0; margin:0 0 24px; background:var(--color-divider);">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); gap:clamp(28px,4vw,52px); align-items:start;">
+        <div>
+          <h2 style="font-family:var(--font-heading); font-weight:600; font-size:clamp(28px,3.4vw,40px); line-height:1.08; letter-spacing:.01em; text-transform:uppercase; margin:0 0 20px;">De ABAP a React, sin perder de vista el resultado</h2>
+          <p style="font-size:16px; line-height:26px; max-width:62ch;">Me formé en el CIFP de Avilés en Desarrollo de Aplicaciones Multiplataforma y Desarrollo de Aplicaciones Web, y apliqué ese aprendizaje en dos entornos muy distintos: el ecosistema SAP en Phoenix Contact y el desarrollo frontend con React en Capgemini.</p>
+          <p style="font-size:16px; line-height:26px; max-width:62ch; color:color-mix(in srgb, var(--color-text) 78%, transparent);">Me interesa la parte del desarrollo donde backend, frontend e integración se tocan: modelar bien los datos, exponerlos con una API limpia y construir una interfaz que los haga útiles. Busco incorporarme a un equipo donde seguir creciendo y aportar una base técnica sólida y versátil.</p>
+        </div>
+        <div style="display:grid; gap:28px;">
+          <div class="blueprint" style="padding:20px 24px;">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <h3 style="font-family:var(--font-heading); font-weight:600; font-size:20px; letter-spacing:.02em; text-transform:uppercase; margin:0 0 8px;">Full stack real</h3>
+            <p style="margin:0; font-size:15px; line-height:24px; color:color-mix(in srgb, var(--color-text) 78%, transparent);">Java/Spring, PHP/Laravel, React y SAP en proyectos y prácticas, no sólo en clase.</p>
+          </div>
+          <div class="blueprint" style="padding:20px 24px;">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <h3 style="font-family:var(--font-heading); font-weight:600; font-size:20px; letter-spacing:.02em; text-transform:uppercase; margin:0 0 8px;">Entornos internacionales</h3>
+            <p style="margin:0; font-size:15px; line-height:24px; color:color-mix(in srgb, var(--color-text) 78%, transparent);">Comunicación técnica diaria en inglés dentro de equipos distribuidos.</p>
+          </div>
+          <div class="blueprint" style="padding:20px 24px;">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <h3 style="font-family:var(--font-heading); font-weight:600; font-size:20px; letter-spacing:.02em; text-transform:uppercase; margin:0 0 8px;">Aprendizaje continuo</h3>
+            <p style="margin:0; font-size:15px; line-height:24px; color:color-mix(in srgb, var(--color-text) 78%, transparent);">De Sistemas Microinformáticos y Redes a desarrollo full stack y SAP.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos" style="padding:48px 0 60px;">
+      <span style="display:block; font-size:13px; line-height:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700); margin:0 0 12px;">03 · Proyectos</span>
+      <hr style="height:1px; border:0; margin:0 0 32px; background:var(--color-divider);">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:clamp(28px,4vw,56px);">
+
+        <article class="blueprint" style="display:flex; flex-direction:column;">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <header style="display:flex; align-items:stretch; border-bottom:1px solid var(--color-divider); font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;">
+            <span style="flex:1; padding:12px 20px; line-height:24px;">Proyecto 01</span>
+            <span style="padding:12px 20px; line-height:24px; border-left:1px solid var(--color-divider); color:color-mix(in srgb, var(--color-text) 70%, transparent); white-space:nowrap;">Individual</span>
+          </header>
+          <div style="padding:24px 20px 20px; display:flex; flex-direction:column; gap:16px; flex:1;">
+            <div>
+              <h3 style="font-family:var(--font-heading); font-weight:600; font-size:32px; line-height:1.06; letter-spacing:.02em; text-transform:uppercase; margin:0 0 4px;">eSport-Gear</h3>
+              <span style="font-size:15px; color:color-mix(in srgb, var(--color-text) 70%, transparent);">Tienda online de equipamiento para eSports</span>
+            </div>
+            <ul style="list-style:none; margin:0; padding:0; display:grid; gap:8px; font-size:15px; line-height:24px;">
+              <li style="display:grid; grid-template-columns:22px 1fr; column-gap:8px;"><span style="color:var(--color-accent-700); font-weight:600; font-size:13px;">01</span><span>Backend con Laravel y MySQL: catálogo, pedidos y gestión de datos.</span></li>
+              <li style="display:grid; grid-template-columns:22px 1fr; column-gap:8px;"><span style="color:var(--color-accent-700); font-weight:600; font-size:13px;">02</span><span>Frontend con React y Vite consumiendo la API del backend.</span></li>
+              <li style="display:grid; grid-template-columns:22px 1fr; column-gap:8px;"><span style="color:var(--color-accent-700); font-weight:600; font-size:13px;">03</span><span>Desarrollado de principio a fin de forma individual.</span></li>
+            </ul>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+              <span class="tag tag-outline">PHP / Laravel</span><span class="tag tag-outline">MySQL</span><span class="tag tag-outline">React</span><span class="tag tag-outline">Vite</span>
+            </div>
+            <a class="btn btn-ghost" href="https://github.com/samuelmv76/eSport-Gear" target="_blank" rel="noopener" style="margin-top:auto; align-self:flex-start;">Ver repositorio ↗</a>
+          </div>
+        </article>
+
+        <article class="blueprint" style="display:flex; flex-direction:column;">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <header style="display:flex; align-items:stretch; border-bottom:1px solid var(--color-divider); font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;">
+            <span style="flex:1; padding:12px 20px; line-height:24px;">Proyecto 02</span>
+            <span style="padding:12px 20px; line-height:24px; border-left:1px solid var(--color-divider); color:color-mix(in srgb, var(--color-text) 70%, transparent); white-space:nowrap;">En equipo</span>
+          </header>
+          <div style="padding:24px 20px 20px; display:flex; flex-direction:column; gap:16px; flex:1;">
+            <div>
+              <h3 style="font-family:var(--font-heading); font-weight:600; font-size:32px; line-height:1.06; letter-spacing:.02em; text-transform:uppercase; margin:0 0 4px;">Proyecto DAM</h3>
+              <span style="font-size:15px; color:color-mix(in srgb, var(--color-text) 70%, transparent);">Proyecto de fin de grado · 2º DAM</span>
+            </div>
+            <ul style="list-style:none; margin:0; padding:0; display:grid; gap:8px; font-size:15px; line-height:24px;">
+              <li style="display:grid; grid-template-columns:22px 1fr; column-gap:8px;"><span style="color:var(--color-accent-700); font-weight:600; font-size:13px;">01</span><span>Aplicación full stack en equipo; mi aportación se centró en el backend.</span></li>
+              <li style="display:grid; grid-template-columns:22px 1fr; column-gap:8px;"><span style="color:var(--color-accent-700); font-weight:600; font-size:13px;">02</span><span>Java y Spring Boot integrando bases SQL y NoSQL (MongoDB).</span></li>
+              <li style="display:grid; grid-template-columns:22px 1fr; column-gap:8px;"><span style="color:var(--color-accent-700); font-weight:600; font-size:13px;">03</span><span>Conexión en tiempo real con sockets y despliegue en Azure con Docker.</span></li>
+            </ul>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+              <span class="tag tag-outline">Java</span><span class="tag tag-outline">Spring Boot</span><span class="tag tag-outline">MongoDB</span><span class="tag tag-outline">Docker</span><span class="tag tag-outline">Azure</span>
+            </div>
+            <a class="btn btn-ghost" href="https://github.com/manelmr02/ProyectoDAM" target="_blank" rel="noopener" style="margin-top:auto; align-self:flex-start;">Ver repositorio ↗</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="trayectoria" style="padding:48px 0 60px;">
+      <span style="display:block; font-size:13px; line-height:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700); margin:0 0 12px;">04 · Trayectoria</span>
+      <hr style="height:1px; border:0; margin:0 0 32px; background:var(--color-divider);">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:clamp(32px,5vw,64px);">
+        <div>
+          <h3 style="font-family:var(--font-heading); font-weight:600; font-size:24px; letter-spacing:.02em; text-transform:uppercase; margin:0 0 24px;">Experiencia</h3>
+          <div style="display:grid; gap:32px;">
+            <div style="border-left:1px solid var(--color-divider); padding-left:24px; position:relative;">
+              <span style="position:absolute; left:-4px; top:8px; width:7px; height:7px; background:var(--color-accent);"></span>
+              <span style="display:block; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700);">Ene 2026 — Mar 2026</span>
+              <h4 style="font-family:var(--font-heading); font-weight:600; font-size:22px; letter-spacing:.02em; text-transform:uppercase; margin:4px 0 2px;">Prácticas en desarrollo SAP</h4>
+              <span style="display:block; font-size:15px; color:color-mix(in srgb, var(--color-text) 70%, transparent); margin-bottom:10px;">Phoenix Contact · Oviedo</span>
+              <ul style="list-style:none; margin:0; padding:0; display:grid; gap:6px; font-size:15px; line-height:24px;">
+                <li>Desarrollo e implementación de soluciones SAP: RAP, SAP BTP, ABAP y vistas CDS.</li>
+                <li>Comunicación técnica diaria en inglés en un entorno totalmente internacional.</li>
+              </ul>
+            </div>
+            <div style="border-left:1px solid var(--color-divider); padding-left:24px; position:relative;">
+              <span style="position:absolute; left:-4px; top:8px; width:7px; height:7px; background:var(--color-accent);"></span>
+              <span style="display:block; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700);">Mar 2025 — Jun 2025</span>
+              <h4 style="font-family:var(--font-heading); font-weight:600; font-size:22px; letter-spacing:.02em; text-transform:uppercase; margin:4px 0 2px;">Prácticas en desarrollo frontend</h4>
+              <span style="display:block; font-size:15px; color:color-mix(in srgb, var(--color-text) 70%, transparent); margin-bottom:10px;">Capgemini · Langreo</span>
+              <ul style="list-style:none; margin:0; padding:0; display:grid; gap:6px; font-size:15px; line-height:24px;">
+                <li>Interfaces de usuario con React para aplicaciones web de cliente.</li>
+                <li>Componentes reutilizables, mejorando rendimiento y escalabilidad.</li>
+                <li>Colaboración en el ciclo completo del desarrollo frontend.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-family:var(--font-heading); font-weight:600; font-size:24px; letter-spacing:.02em; text-transform:uppercase; margin:0 0 24px;">Formación</h3>
+          <div style="display:grid; gap:32px;">
+            <div style="border-left:1px solid var(--color-divider); padding-left:24px; position:relative;">
+              <span style="position:absolute; left:-4px; top:8px; width:7px; height:7px; background:var(--color-accent);"></span>
+              <span style="display:block; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700);">Sept 2025 — Jun 2026</span>
+              <h4 style="font-family:var(--font-heading); font-weight:600; font-size:22px; letter-spacing:.02em; text-transform:uppercase; margin:4px 0 2px;">Técnico Superior en DAM</h4>
+              <span style="display:block; font-size:15px; color:color-mix(in srgb, var(--color-text) 70%, transparent);">Desarrollo de Aplicaciones Multiplataforma · CIFP Avilés</span>
+            </div>
+            <div style="border-left:1px solid var(--color-divider); padding-left:24px; position:relative;">
+              <span style="position:absolute; left:-4px; top:8px; width:7px; height:7px; background:var(--color-accent);"></span>
+              <span style="display:block; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700);">Sept 2024 — Jun 2025</span>
+              <h4 style="font-family:var(--font-heading); font-weight:600; font-size:22px; letter-spacing:.02em; text-transform:uppercase; margin:4px 0 2px;">Técnico Superior en DAW</h4>
+              <span style="display:block; font-size:15px; color:color-mix(in srgb, var(--color-text) 70%, transparent);">Desarrollo de Aplicaciones Web · CIFP Avilés</span>
+            </div>
+            <div style="border-left:1px solid var(--color-divider); padding-left:24px; position:relative;">
+              <span style="position:absolute; left:-4px; top:8px; width:7px; height:7px; background:var(--color-accent);"></span>
+              <span style="display:block; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700);">Sept 2021 — Mar 2022</span>
+              <h4 style="font-family:var(--font-heading); font-weight:600; font-size:22px; letter-spacing:.02em; text-transform:uppercase; margin:4px 0 2px;">Sistemas Microinformáticos y Redes</h4>
+              <span style="display:block; font-size:15px; color:color-mix(in srgb, var(--color-text) 70%, transparent);">CIFP Avilés</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack" style="padding:48px 0 60px;">
+      <span style="display:block; font-size:13px; line-height:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700); margin:0 0 12px;">05 · Stack técnico</span>
+      <hr style="height:1px; border:0; margin:0 0 32px; background:var(--color-divider);">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:clamp(24px,3vw,44px);">
+        <div class="blueprint" style="padding:20px;">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <h3 style="font-family:var(--font-heading); font-weight:600; font-size:20px; letter-spacing:.04em; text-transform:uppercase; margin:0 0 14px;">SAP</h3>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;"><span class="tag tag-accent">RAP</span><span class="tag tag-accent">SAP BTP</span><span class="tag tag-accent">ABAP</span><span class="tag tag-accent">Vistas CDS</span></div>
+        </div>
+        <div class="blueprint" style="padding:20px;">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <h3 style="font-family:var(--font-heading); font-weight:600; font-size:20px; letter-spacing:.04em; text-transform:uppercase; margin:0 0 14px;">Backend</h3>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;"><span class="tag tag-outline">Java</span><span class="tag tag-outline">Spring Boot</span><span class="tag tag-outline">Spring MVC</span><span class="tag tag-outline">Spring Data</span><span class="tag tag-outline">Spring Security</span><span class="tag tag-outline">PHP / Laravel</span></div>
+        </div>
+        <div class="blueprint" style="padding:20px;">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <h3 style="font-family:var(--font-heading); font-weight:600; font-size:20px; letter-spacing:.04em; text-transform:uppercase; margin:0 0 14px;">Frontend</h3>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;"><span class="tag tag-outline">React</span><span class="tag tag-outline">JavaScript</span><span class="tag tag-outline">HTML5</span><span class="tag tag-outline">CSS3</span><span class="tag tag-outline">Vite</span></div>
+        </div>
+        <div class="blueprint" style="padding:20px;">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <h3 style="font-family:var(--font-heading); font-weight:600; font-size:20px; letter-spacing:.04em; text-transform:uppercase; margin:0 0 14px;">Datos y versiones</h3>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;"><span class="tag tag-outline">MySQL</span><span class="tag tag-outline">SQL</span><span class="tag tag-outline">MongoDB</span><span class="tag tag-outline">Git</span><span class="tag tag-outline">Docker</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" style="padding:48px 0 72px;">
+      <span style="display:block; font-size:13px; line-height:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700); margin:0 0 12px;">06 · Contacto</span>
+      <hr style="height:1px; border:0; margin:0 0 32px; background:var(--color-divider);">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:clamp(28px,4vw,56px); align-items:start;">
+        <div>
+          <h2 style="font-family:var(--font-heading); font-weight:600; font-size:clamp(30px,3.6vw,44px); line-height:1.06; letter-spacing:.01em; text-transform:uppercase; margin:0 0 16px;">¿Hablamos de tu próximo proyecto?</h2>
+          <p style="font-size:16px; line-height:26px; max-width:48ch; color:color-mix(in srgb, var(--color-text) 78%, transparent);">Busco incorporarme a un equipo de desarrollo donde seguir creciendo. Escríbeme y te respondo pronto.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;">
+            <a class="btn btn-primary" href="mailto:samuelmv04@gmail.com">samuelmv04@gmail.com</a>
+            <a class="btn btn-ghost" href="https://github.com/samuelmv76" target="_blank" rel="noopener">Ver GitHub</a>
+          </div>
+        </div>
+        <div class="blueprint" style="padding:20px 24px;">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <dl style="margin:0; display:grid; grid-template-columns:max-content minmax(0,1fr); column-gap:20px; row-gap:10px; font-size:15px;">
+            <dt style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700);">Email</dt>
+            <dd style="margin:0;"><a href="mailto:samuelmv04@gmail.com">samuelmv04@gmail.com</a></dd>
+            <dt style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700);">Teléfono</dt>
+            <dd style="margin:0;">+34 722 110 250</dd>
+            <dt style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700);">Ubicación</dt>
+            <dd style="margin:0;">Corvera de Asturias, Asturias</dd>
+            <dt style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-700);">Idiomas</dt>
+            <dd style="margin:0;">Español (nativo) · Inglés B2</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <footer style="border-top:1px solid var(--color-divider); padding:24px 0 40px; display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 70%, transparent);">
+      <span>© 2026 Samuel Martos Vidal</span>
+      <span style="display:flex; gap:20px;">
+        <a href="https://github.com/samuelmv76" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:samuelmv04@gmail.com">Email</a>
+        <a href="#top">Arriba</a>
+      </span>
+    </footer>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;available&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Contenido&quot;},
+  &quot;showProfileCard&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Contenido&quot;},
+  &quot;showSpecSheet&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Contenido&quot;}
+}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      available: this.props.available ?? true,
+      showProfileCard: this.props.showProfileCard ?? true,
+      showSpecSheet: this.props.showSpecSheet ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>
