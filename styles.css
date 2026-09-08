@@ -7,6 +7,7 @@
   --bg-3: #10162a;
   --glass: rgba(255, 255, 255, 0.055);
   --glass-strong: rgba(255, 255, 255, 0.09);
+  --glass-solid: rgba(20, 26, 44, 0.72);
   --glass-border: rgba(255, 255, 255, 0.12);
   --text: #eef1f7;
   --muted: #9aa4bd;
@@ -88,28 +89,36 @@ section { position: relative; padding-block: clamp(4rem, 10vw, 7.5rem); }
 .section-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); }
 .section-head p { color: var(--muted); margin-top: .85rem; font-size: 1.02rem; max-width: 52ch; }
 
-/* Ambient background mesh */
+/* Ambient background mesh
+   Uses a soft radial-gradient fade instead of filter: blur() — a large
+   fixed + blurred element forces the browser to recompute the blur every
+   scroll frame, which was the main source of scroll lag. A gradient with
+   a feathered edge looks the same but is composited cheaply. */
 .mesh-bg {
   position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none;
+  contain: strict;
 }
 .mesh-bg span {
   position: absolute; border-radius: 50%;
-  filter: blur(90px); opacity: .35; will-change: transform;
+  opacity: .35; will-change: transform;
 }
-.mesh-bg .m1 { width: 46vw; height: 46vw; top: -14vw; left: -10vw; background: var(--accent); }
-.mesh-bg .m2 { width: 38vw; height: 38vw; top: 12vh; right: -12vw; background: var(--accent-2); opacity: .28; }
-.mesh-bg .m3 { width: 34vw; height: 34vw; bottom: -14vw; left: 20vw; background: var(--accent-3); opacity: .18; }
+.mesh-bg .m1 { width: 46vw; height: 46vw; top: -14vw; left: -10vw; background: radial-gradient(circle, var(--accent) 0%, var(--accent) 22%, transparent 72%); }
+.mesh-bg .m2 { width: 38vw; height: 38vw; top: 12vh; right: -12vw; background: radial-gradient(circle, var(--accent-2) 0%, var(--accent-2) 22%, transparent 72%); opacity: .28; }
+.mesh-bg .m3 { width: 34vw; height: 34vw; bottom: -14vw; left: 20vw; background: radial-gradient(circle, var(--accent-3) 0%, var(--accent-3) 22%, transparent 72%); opacity: .18; }
 .noise {
-  position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .045; mix-blend-mode: overlay;
+  position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .03;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Glass surface */
+/* Glass surface
+   No backdrop-filter here: with ~20 .glass cards on the page, blurring
+   the scrolling content behind every one of them each frame was the
+   single biggest cause of scroll jank. A solid-ish translucent background
+   keeps the look without the per-frame blur cost. Real blur is kept only
+   on the fixed nav (.nav-inner.glass below), where there's just one. */
 .glass {
-  background: var(--glass);
+  background: var(--glass-solid, rgba(20, 24, 38, 0.72));
   border: 1px solid var(--glass-border);
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
   border-radius: var(--radius);
 }
 
@@ -163,6 +172,16 @@ section { position: relative; padding-block: clamp(4rem, 10vw, 7.5rem); }
 .nav-actions { display: flex; align-items: center; gap: .6rem; }
 .nav-actions .btn { padding: .6rem 1.15rem; font-size: .85rem; }
 .nav-toggle { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--glass); border: 1px solid var(--glass-border); }
+
+/* Only the fixed nav gets a real blur — it's the single instance on the
+   page, so the per-frame cost is acceptable (unlike the ~20 .glass cards
+   above, which now use a solid background instead). */
+.nav-inner.glass {
+  background: rgba(9, 12, 19, 0.62);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
 .nav-toggle svg { width: 18px; height: 18px; }
 
 @media (min-width: 720px) {

@@ -106,16 +106,17 @@
     });
   }
 
-  /* ---------- mesh background parallax (mouse-reactive, subtle) ---------- */
+  /* ---------- mesh background parallax (mouse-reactive, subtle) ----------
+     Runs a rAF loop only while the mouse is actually moving and the
+     animation hasn't settled yet. Previously this looped forever from
+     page load, permanently competing with scroll/input work on the main
+     thread even when nothing was changing on screen. */
   function initMeshParallax() {
     if (reduced || !fineHover) return;
     var spans = $$(".mesh-bg span");
     if (!spans.length) return;
     var tx = 0, ty = 0, cx = 0, cy = 0;
-    window.addEventListener("mousemove", function (e) {
-      tx = (e.clientX / window.innerWidth - 0.5) * 28;
-      ty = (e.clientY / window.innerHeight - 0.5) * 28;
-    }, { passive: true });
+    var running = false;
     function raf() {
       cx += (tx - cx) * 0.04;
       cy += (ty - cy) * 0.04;
@@ -123,9 +124,20 @@
         var factor = (i + 1) * 0.6;
         el.style.transform = "translate3d(" + (cx * factor) + "px," + (cy * factor) + "px,0)";
       });
-      requestAnimationFrame(raf);
+      if (Math.abs(tx - cx) > 0.05 || Math.abs(ty - cy) > 0.05) {
+        requestAnimationFrame(raf);
+      } else {
+        running = false;
+      }
     }
-    requestAnimationFrame(raf);
+    window.addEventListener("mousemove", function (e) {
+      tx = (e.clientX / window.innerWidth - 0.5) * 28;
+      ty = (e.clientY / window.innerHeight - 0.5) * 28;
+      if (!running) {
+        running = true;
+        requestAnimationFrame(raf);
+      }
+    }, { passive: true });
   }
 
   /* ---------- GSAP-enhanced hero entrance (progressive, optional) ---------- */
