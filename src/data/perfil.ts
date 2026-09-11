@@ -46,6 +46,18 @@ export const datosHero = [
 
 /* Los tres proyectos fijados en github.com/samuelmv76 */
 export const proyectos: Proyecto[] = [
+    {
+    nombre: "laliga-fantasy-stats",
+    rol: "Proyecto personal",
+    arte: "grafica",
+    puntos: [
+      "App para seguir tu equipo de LaLiga Fantasy: mercado de jugadores y ranking diario.",
+      "Guarda el histórico diario de precios, no solo el último, para graficar la evolución de cada jugador.",
+      "React con Vite; la plantilla del usuario vive en el navegador, sin necesidad de cuenta.",
+    ],
+    chips: ["React", "Vite", "JavaScript", "Gráficas"],
+    url: "https://github.com/samuelmv76/laliga-fantasy-stats",
+  },
   {
     nombre: "eSport-Gear",
     rol: "Proyecto personal",
@@ -70,18 +82,7 @@ export const proyectos: Proyecto[] = [
     chips: ["Angular", "TypeScript", "Java", "Spring Boot", "MySQL", "MongoDB", "Docker"],
     url: "https://github.com/samuelmv76/Runeterra-Tactics",
   },
-  {
-    nombre: "laliga-fantasy-stats",
-    rol: "Proyecto personal",
-    arte: "grafica",
-    puntos: [
-      "App para seguir tu equipo de LaLiga Fantasy: mercado de jugadores y ranking diario.",
-      "Guarda el histórico diario de precios, no solo el último, para graficar la evolución de cada jugador.",
-      "React con Vite; la plantilla del usuario vive en el navegador, sin necesidad de cuenta.",
-    ],
-    chips: ["React", "Vite", "JavaScript", "Gráficas"],
-    url: "https://github.com/samuelmv76/laliga-fantasy-stats",
-  },
+
 ];
 
 export const experiencia: Hito[] = [
