@@ -5,7 +5,6 @@ type Props = {
   id?: string;
   eyebrow: string;
   titulo: string;
-  /** Sección con el fondo alterno (#1d1d1f en oscuro, #f5f5f7 en claro). */
   alterna?: boolean;
   children: ReactNode;
 };

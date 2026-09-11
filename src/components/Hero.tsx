@@ -5,12 +5,10 @@ import { PerfilCard } from "./PerfilCard";
 import { datosHero, mailto } from "../data/perfil";
 import { EASE } from "../lib/anim";
 
-/* El hero entra al cargar, no al hacer scroll: ya está en pantalla. */
 export function Hero() {
   const reducido = useReducedMotion();
 
-  // Misma forma siempre: con movimiento reducido `initial` es false, que
-  // Motion entiende como "empieza ya en su sitio".
+  // `initial: false` es la forma que entiende Motion para "sin animación de entrada".
   const entrada = (i: number) => ({
     initial: reducido ? (false as const) : { opacity: 0, y: 16 },
     animate: { opacity: 1, y: 0 },

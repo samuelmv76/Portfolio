@@ -5,12 +5,9 @@ import { EASE } from "../lib/anim";
 type Props = {
   children: ReactNode;
   className?: string;
-  /** Retardo en segundos, para escalonar hermanos. */
   delay?: number;
 };
 
-/* Entrada al entrar en pantalla. Con `prefers-reduced-motion` no envuelve
-   nada en motion: devuelve el contenido tal cual, visible desde el principio. */
 export function Reveal({ children, className, delay = 0 }: Props) {
   const reducido = useReducedMotion();
 

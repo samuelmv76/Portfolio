@@ -1,6 +1,3 @@
-/* Todo el contenido de la página, en un sitio. Para tocar un
-   proyecto o añadir un puesto no hace falta abrir ningún componente. */
-
 export type Arte = "tienda" | "tactica" | "grafica";
 
 export interface Proyecto {
@@ -44,7 +41,6 @@ export const datosHero = [
   { valor: "SAP", etiqueta: "RAP · BTP · ABAP · CDS" },
 ];
 
-/* Los tres proyectos fijados en github.com/samuelmv76 */
 export const proyectos: Proyecto[] = [
     {
     nombre: "laliga-fantasy-stats",

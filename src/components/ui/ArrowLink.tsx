@@ -7,8 +7,6 @@ type Props = {
   externo?: boolean;
 };
 
-/* El enlace con chevron. El icono viene de lucide en vez de un ::after
-   con un carácter, así que hereda el color y se alinea solo. */
 export function ArrowLink({ href, children, externo = false }: Props) {
   return (
     <a

@@ -1,9 +1,11 @@
-/* La ficha perfil.json del hero. El resaltado va con dos clases, no con
-   una librería de sintaxis: son seis líneas. */
-export function PerfilCard() {
-  const k = "text-brand";
-  const v = "text-ink";
+const FILAS: [string, string | string[]][] = [
+  ["nombre", "Samuel Martos Vidal"],
+  ["ubicacion", "Asturias, España"],
+  ["stack", ["Java/Spring", "React", "Angular", "PHP/Laravel", "SAP RAP/BTP"]],
+  ["buscando", "equipo de desarrollo"],
+];
 
+export function PerfilCard() {
   return (
     <div className="rounded-card bg-card p-[22px]">
       <div className="mb-3.5 flex items-center gap-1.5 font-mono text-[11px] text-ink-2">
@@ -14,12 +16,21 @@ export function PerfilCard() {
       </div>
       <pre className="font-mono text-[12.5px] leading-[1.85] tracking-normal break-words whitespace-pre-wrap text-ink-2">
         <code>
-{"{\n  "}<span className={k}>"nombre"</span>{": "}<span className={v}>"Samuel Martos Vidal"</span>{",\n  "}
-<span className={k}>"ubicacion"</span>{": "}<span className={v}>"Asturias, España"</span>{",\n  "}
-<span className={k}>"stack"</span>{": ["}<span className={v}>"Java/Spring"</span>{", "}<span className={v}>"React"</span>{",\n            "}
-<span className={v}>"Angular"</span>{", "}<span className={v}>"PHP/Laravel"</span>{",\n            "}
-<span className={v}>"SAP RAP/BTP"</span>{"],\n  "}
-<span className={k}>"buscando"</span>{": "}<span className={v}>"equipo de desarrollo"</span>{"\n}"}
+          {"{\n"}
+          {FILAS.map(([clave, valor], i) => (
+            <span key={clave}>
+              {"  "}
+              <span className="text-brand">"{clave}"</span>
+              {": "}
+              {Array.isArray(valor) ? (
+                <>["<span className="text-ink">{valor.join('", "')}</span>"]</>
+              ) : (
+                <span className="text-ink">"{valor}"</span>
+              )}
+              {i < FILAS.length - 1 ? ",\n" : "\n"}
+            </span>
+          ))}
+          {"}"}
         </code>
       </pre>
     </div>

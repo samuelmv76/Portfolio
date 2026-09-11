@@ -3,12 +3,10 @@ import type { ReactNode } from "react";
 type Props = {
   href: string;
   children: ReactNode;
-  /** Versión compacta para la barra de navegación. */
   small?: boolean;
   externo?: boolean;
 };
 
-/* La pastilla azul: el único botón sólido de toda la página. */
 export function Btn({ href, children, small = false, externo = false }: Props) {
   return (
     <a
