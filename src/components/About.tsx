@@ -9,7 +9,7 @@ const DESTACADOS = [
 
 export function About() {
   return (
-    <Section id="sobre-mi" eyebrow="Sobre mí" titulo="De ABAP a React, sin perder de vista el resultado." alterna>
+    <Section id="sobre-mi" eyebrow="Sobre mí" titulo="Desarrollo Full Stack & SAP: Integrando sistemas, maximizando resultados." alterna>
       <div className="grid items-start gap-[34px] lg:grid-cols-[280px_1fr]">
         <Reveal>
           <div className="rounded-card bg-card-alt p-[26px] text-center">
@@ -29,15 +29,10 @@ export function About() {
 
         <Reveal delay={0.08}>
           <p className="mb-4 max-w-[62ch] text-pretty">
-            Soy desarrollador de software, titulado en Desarrollo de Aplicaciones Multiplataforma,
-            Desarrollo de Aplicaciones Web y Sistemas Microinformáticos y Redes por el CIFP de Avilés.
-            He aplicado esa formación en dos entornos muy distintos: el ecosistema SAP en Phoenix
-            Contact y el desarrollo frontend con React en Capgemini.
+            Soy desarrollador de software con una sólida base técnica, respaldada por las titulaciones de Desarrollo de Aplicaciones Multiplataforma (DAM), Desarrollo de Aplicaciones Web (DAW) y Sistemas Microinformáticos y Redes (SMR). A lo largo de mi trayectoria, he aportado valor en entornos tecnológicos altamente contrastados: desde la robustez del ecosistema SAP en Phoenix Contact, hasta la agilidad del desarrollo frontend con React en Capgemini.
           </p>
           <p className="max-w-[62ch] text-meta text-pretty text-ink-2">
-            Me interesa la parte del desarrollo donde backend, frontend e integración se tocan:
-            modelar bien los datos, exponerlos con una API limpia y construir una interfaz que los
-            haga útiles.
+           Mi enfoque profesional se centra en el punto de convergencia entre backend, frontend y arquitectura de integración. Me especializo en el modelado eficiente de datos, el diseño de APIs escalables y la construcción de interfaces de usuario que transformen la lógica de negocio en herramientas verdaderamente útiles.
           </p>
           <div className="mt-6 grid gap-[18px] sm:grid-cols-2">
             {DESTACADOS.map((d) => (

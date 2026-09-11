@@ -21,14 +21,6 @@ export function Hero() {
     <section id="top" className="bg-bg py-[clamp(52px,7vw,92px)]">
       <div className="mx-auto grid max-w-[980px] items-center gap-10 px-[22px] lg:grid-cols-[1.12fr_0.88fr]">
         <div className="min-w-0">
-          <motion.span
-            {...entrada(0)}
-            className="mb-5 inline-flex items-center gap-2 rounded-full bg-card px-[13px] py-1.5 text-micro font-medium text-ink-2"
-          >
-            <i className="size-1.5 rounded-full bg-[#34c759]" />
-            Disponible para nuevas oportunidades
-          </motion.span>
-
           <motion.h1 {...entrada(1)} className="mb-[18px] text-display font-semibold text-balance">
             Construyo software full stack y soluciones SAP que funcionan de verdad.
           </motion.h1>
