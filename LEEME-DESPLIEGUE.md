@@ -1,27 +1,72 @@
-# Cómo publicar tu portfolio gratis
+# Portfolio — Samuel Martos Vidal
 
-Es una web estática (HTML + CSS + JS, sin backend, sin build). Puedes subirla gratis en cualquiera de estas opciones — elige la que prefieras:
+Aplicación React con Vite, TypeScript, Tailwind CSS v4, Motion y lucide-react.
 
-## Opción 1 — Netlify (la más rápida, arrastrar y soltar)
-1. Entra en https://app.netlify.com/drop
-2. Arrastra la carpeta completa del proyecto a la ventana.
-3. Netlify te da una URL al momento (tipo `algo.netlify.app`). Puedes cambiar el subdominio en Site settings → Domain management, o conectar un dominio propio, gratis.
+## Arrancar el proyecto
 
-## Opción 2 — Vercel
-1. Crea una cuenta gratis en https://vercel.com
-2. Instala su CLI (`npm i -g vercel`) o usa "Add New Project" → "Upload" desde el panel.
-3. Despliega la carpeta tal cual (no hace falta configurar build command, es HTML plano).
+Las dependencias no están en `package.json` a propósito: instálalas con estos
+dos comandos y npm escribirá las versiones vigentes junto con el lockfile.
 
-## Opción 3 — GitHub Pages
-1. Crea un repositorio en tu GitHub (`samuelmv76/portfolio`, por ejemplo).
-2. Sube todos los archivos de esta carpeta a la raíz del repo.
-3. En el repo → Settings → Pages → Source: selecciona la rama `main` y carpeta `/root`.
-4. Tu web quedará en `https://samuelmv76.github.io/portfolio`.
+```bash
+npm install react react-dom motion lucide-react
+npm install -D vite @vitejs/plugin-react typescript @types/react @types/react-dom tailwindcss @tailwindcss/vite
+```
 
-## Nota sobre el `.htaccess`
-Ese archivo solo sirve para hosting Apache (como Hostinger). Netlify, Vercel y GitHub Pages lo ignoran — no pasa nada si se sube igualmente, simplemente no se usa.
+Después:
 
-## Antes de publicar
-- Cambia el email de `mailto` si algún día usas otro.
-- Cuando tengas capturas reales de eSport-Gear y ProyectoDAM (o los despliegues en vivo), puedo sustituir las tarjetas ilustradas por las capturas reales y añadir el enlace "Ver demo".
-- Si quieres una foto tuya en vez del monograma "SM", súbela y la integro (convertida a WebP).
+```bash
+npm run dev        # servidor de desarrollo en http://localhost:5173
+npm run build      # compila a dist/
+npm run preview    # sirve dist/ para comprobarlo antes de publicar
+npm run typecheck  # solo TypeScript, sin compilar
+```
+
+## Estructura
+
+```
+index.html              Shell de Vite. Aquí viven los <meta>, el JSON-LD
+                        y el script que evita el parpadeo de tema.
+public/assets/          Archivos servidos tal cual (favicon).
+src/
+  main.tsx              Punto de entrada.
+  App.tsx               Composición de las secciones.
+  index.css             Tailwind + tokens del tema + estilos base.
+  data/perfil.ts        TODO el contenido: proyectos, experiencia, stack.
+  hooks/useTheme.ts     Tema oscuro/claro.
+  lib/anim.ts           Curva de animación compartida.
+  components/
+    ui/                 Botón, enlace con chevron, chips.
+    art/                Las tres ilustraciones SVG.
+```
+
+Para cambiar un texto, añadir un proyecto o un puesto: **`src/data/perfil.ts`**.
+No hace falta tocar ningún componente.
+
+## Tema
+
+Oscuro por defecto. `prefers-color-scheme` no se consulta: el sistema operativo
+del visitante no decide. El botón de la barra pone `data-theme="light"` en el
+`<html>` y lo guarda; volver a oscuro quita el atributo y la clave.
+
+Los colores son tokens de `@theme` en `index.css`, y el tema claro solo los
+redefine, así que los componentes usan `bg-bg`, `text-ink`, etc. sin variantes.
+
+## Publicar
+
+Vercel o Netlify: conecta el repo y detectan Vite solo.
+Comando de build `npm run build`, carpeta de salida `dist`.
+Se sirve desde la raíz del dominio, así que `vite.config.ts` no necesita `base`.
+
+Para GitHub Pages haría falta `base: "/Portfolio/"` en `vite.config.ts` y un
+workflow de Actions que publique `dist/`.
+
+## Pendiente
+
+- Capturas reales de los tres proyectos: las tarjetas llevan ilustración abstracta.
+- Borrar los restos de la versión estática (ver abajo).
+
+## Archivos de la versión anterior, ya sin uso
+
+`estilo-apple.css`, `tema.js`, `styles.css`, `main.js`, `lib/`, `apple/`,
+`assets/` (sustituida por `public/assets/`) y `.htaccess` (solo servía para
+hosting Apache). Se pueden borrar: `git rm -r apple lib assets && git rm estilo-apple.css tema.js styles.css main.js .htaccess`

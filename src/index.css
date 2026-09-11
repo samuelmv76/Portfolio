@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+/* =============================================================
+   Sistema visual — registro de apple.com (paleta, proporciones,
+   tipografía apretada). Ningún activo ni marca de Apple.
+
+   TEMA: oscuro por defecto. Los tokens viven aquí y el tema claro
+   solo los redefine, así que ningún componente necesita variantes
+   `light:` — basta con usar bg-bg, text-ink, etc.
+
+     · sin atributo        → oscuro (lo que ve todo el mundo)
+     · data-theme="light"  → claro, y solo si el visitante lo pide
+   ============================================================= */
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Escala tipográfica: cada tamaño lleva su interlineado y su
+     tracking, así que `text-display` ya trae los tres valores. */
+  --text-display: clamp(38px, 5.6vw, 64px);
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.035em;
+
+  --text-h2: clamp(30px, 4.2vw, 48px);
+  --text-h2--line-height: 1.08;
+  --text-h2--letter-spacing: -0.03em;
+
+  --text-h3: clamp(21px, 2vw, 26px);
+  --text-h3--line-height: 1.15;
+  --text-h3--letter-spacing: -0.022em;
+
+  --text-lede: clamp(17px, 1.5vw, 21px);
+  --text-lede--line-height: 1.42;
+  --text-lede--letter-spacing: -0.01em;
+
+  --text-body: 17px;
+  --text-body--line-height: 1.47;
+  --text-body--letter-spacing: -0.012em;
+
+  --text-meta: 15px;
+  --text-meta--line-height: 1.5;
+
+  --text-micro: 12px;
+  --text-micro--line-height: 1.35;
+
+  /* Paleta oscura (la de partida) */
+  --color-bg:          #000000;
+  --color-surface:     #1d1d1f;   /* secciones alternas */
+  --color-card:        #1d1d1f;   /* tarjeta sobre fondo normal */
+  --color-card-alt:    #2d2d30;   /* tarjeta sobre sección alterna */
+  --color-ink:         #f5f5f7;
+  --color-ink-2:       #a1a1a6;
+  --color-ink-on:      #000000;   /* texto sobre un bloque de color ink */
+  --color-line:        #424245;
+  --color-brand:       #2997ff;   /* enlaces */
+  --color-brand-solid: #0071e3;   /* relleno del botón pastilla */
+  --color-brand-hover: #0077ed;
+  --color-chip:        rgba(255, 255, 255, 0.1);
+  --color-chip-ink:    #a1a1a6;
+  --color-nav:         rgba(22, 22, 23, 0.8);
+  --color-nav-line:    rgba(255, 255, 255, 0.12);
+  --color-art:         #1d1d1f;   /* fondo de las ilustraciones */
+  --color-art-line:    rgba(245, 245, 247, 0.3);
+
+  --radius-card: 18px;
+  --radius-tile: 20px;
+
+  --ease-out-quart: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Tema claro. Fuera de @layer para que gane a los tokens de @theme.
+   El azul de los enlaces baja a #0071e3, que sobre blanco sí contrasta;
+   el relleno del botón no cambia porque pasa AA en los dos temas. */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --color-bg:          #ffffff;
+  --color-surface:     #f5f5f7;
+  --color-card:        #f5f5f7;
+  --color-card-alt:    #ffffff;
+  --color-ink:         #1d1d1f;
+  --color-ink-2:       #6e6e73;
+  --color-ink-on:      #ffffff;
+  --color-line:        #d2d2d7;
+  --color-brand:       #0071e3;
+  --color-brand-solid: #0071e3;
+  --color-brand-hover: #0077ed;
+  --color-chip:        rgba(0, 0, 0, 0.05);
+  --color-chip-ink:    #5a5a5f;
+  --color-nav:         rgba(255, 255, 255, 0.8);
+  --color-nav-line:    rgba(0, 0, 0, 0.1);
+  --color-art:         #e8e8ed;
+  --color-art-line:    rgba(29, 29, 31, 0.28);
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.47;
+    letter-spacing: -0.012em;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
